@@ -1,5 +1,4 @@
 const handleAllEvents = () => {
-    // Reveal Animations
     const reveals = document.querySelectorAll(".reveal");
     reveals.forEach((element) => {
         const windowHeight = window.innerHeight;
@@ -9,33 +8,63 @@ const handleAllEvents = () => {
         }
     });
 
-    // Navbar Scroll Effect
     const navbar = document.getElementById("navbar");
-    if (window.scrollY > 50) {
-        navbar.classList.add("nav-scrolled");
-    } else {
-        navbar.classList.remove("nav-scrolled");
+    if (navbar) {
+        window.scrollY > 50 
+            ? navbar.classList.add("nav-scrolled") 
+            : navbar.classList.remove("nav-scrolled");
     }
 };
 
-// --- TAMBAHAN: MOBILE NAV LOGIC ---
-const menuToggle = document.querySelector('#mobile-menu');
+const menuToggle = document.querySelector('.menu-toggle'); 
 const navLinks = document.querySelector('.nav-links');
 
-if (menuToggle) {
-    menuToggle.addEventListener('click', () => {
-        menuToggle.classList.toggle('is-active');
-        navLinks.classList.toggle('active');
+if (menuToggle && navLinks) {
+    const closeMenu = () => {
+        if (window.innerWidth <= 768) {
+            menuToggle.classList.remove('is-active');
+            navLinks.classList.remove('active');
+            setTimeout(() => {
+                if (!navLinks.classList.contains('active')) {
+                    navLinks.style.display = 'none';
+                }
+            }, 400); 
+        }
+    };
+
+    menuToggle.addEventListener('click', (e) => {
+        e.stopPropagation();
+        if (!navLinks.classList.contains('active')) {
+            navLinks.style.display = 'flex';
+            setTimeout(() => {
+                menuToggle.classList.add('is-active');
+                navLinks.classList.add('active');
+            }, 10);
+        } else {
+            closeMenu();
+        }
+    });
+
+    document.querySelectorAll('.nav-links a').forEach(link => {
+        link.addEventListener('click', closeMenu);
+    });
+
+    document.addEventListener('click', (e) => {
+        if (navLinks.classList.contains('active') && 
+            !menuToggle.contains(e.target) && 
+            !navLinks.contains(e.target)) {
+            closeMenu();
+        }
+    });
+
+    window.addEventListener('resize', () => {
+        if (window.innerWidth > 768) {
+            navLinks.style.display = '';
+            navLinks.classList.remove('active');
+            menuToggle.classList.remove('is-active');
+        }
     });
 }
-
-// Menutup menu saat link diklik
-document.querySelectorAll('.nav-links a').forEach(link => {
-    link.addEventListener('click', () => {
-        menuToggle.classList.remove('is-active');
-        navLinks.classList.remove('active');
-    });
-});
 
 window.addEventListener("scroll", handleAllEvents);
 window.addEventListener("load", handleAllEvents);
