@@ -3,98 +3,178 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portfolio | Farrel Fernaldy</title>
-
-    <!-- Google Font -->
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
-
-    <!-- CSS -->
+    <title>Farrel Fernaldy | Portfolio</title>
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <link rel="icon" type="image/svg+xml" href="assets/logo.svg">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
 
-<nav id="navbar">
-    <div class="container nav-wrapper">
-        <div class="logo">Farrel Fernaldy</div>
-        <ul class="nav-links">
-            <li><a href="#home">Home</a></li>
-            <li><a href="#about">Tentang</a></li>
-            <li><a href="#skills">Keahlian</a></li>
-            <li><a href="#projects">Proyek</a></li>
-            <li><a href="#contact">Kontak</a></li>
-        </ul>
-    </div>
-</nav>
-
-<!-- HERO -->
-<section id="home" class="hero">
-    <div class="container hero-content">
-        <h1>Halo, Saya <span>Nama Kamu</span></h1>
-        <p>Mahasiswa Teknik Informatika yang fokus pada pengembangan web modern dan sistem informasi.</p>
-        <a href="#about" class="btn-primary">Lanjutkan</a>
-    </div>
-</section>
-
-<!-- ABOUT -->
-<section id="about" class="section">
-    <div class="container about">
-        <div>
-            <h2>Tentang Saya</h2>
-            <p>
-                Saya memiliki minat dalam pengembangan website yang bersih,
-                terstruktur, dan user-friendly. Terbiasa menggunakan
-                HTML, CSS, dan JavaScript untuk membangun solusi berbasis web.
-            </p>
+    <nav id="navbar">
+        <div class="container nav-wrapper">
+            <a href="#home" class="logo">
+                <img src="assets/logo.svg" alt="FF Logo" class="nav-logo">
+                <span>FARREL FERNALDY</span>
+            </a>
+            <ul class="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#projects">Work</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
         </div>
-        <img src="assets/profile.jpg" alt="Profile">
-    </div>
-</section>
+    </nav>
 
-<!-- SKILLS -->
-<section id="skills" class="section bg-light">
-    <div class="container">
-        <h2 class="center">Keahlian</h2>
-        <div class="grid-3">
-            <div class="card">HTML & Semantic Structure</div>
-            <div class="card">CSS Layout & Responsive</div>
-            <div class="card">JavaScript DOM Manipulation</div>
-            <div class="card">Git & GitHub</div>
-            <div class="card">UI/UX Principles</div>
-            <div class="card">Problem Solving</div>
-        </div>
-    </div>
-</section>
-
-<!-- PROJECTS -->
-<section id="projects" class="section">
-    <div class="container">
-        <h2 class="center">Proyek</h2>
-        <div class="grid-2">
-            <div class="project-card">
-                <h3>Website Perencanaan Akademik</h3>
-                <p>Platform manajemen jadwal dengan desain modern dan interaktif.</p>
-            </div>
-            <div class="project-card">
-                <h3>File Encryption Web App</h3>
-                <p>Aplikasi berbasis web untuk upload dan decrypt file secara aman.</p>
+    <section id="home" class="hero">
+        <div class="bg-glow"></div>
+        <div class="container">
+            <div class="hero-card reveal active">
+                <p class="tagline">Informatics Student</p>
+                <h1>Building Digital <span>Experiences.</span></h1>
+                <p class="hero-desc">Halo! Saya Farrel Fernaldy. Saya fokus pada pengembangan solusi web modern yang menggabungkan struktur kode yang bersih dengan estetika visual yang kuat.</p>
+                <div class="hero-btns">
+                    <a href="#projects" class="btn-primary">Lihat Proyek</a>
+                    <a href="#contact" class="btn-outline">Hubungi Saya</a>
+                </div>
             </div>
         </div>
-    </div>
-</section>
+    </section>
 
-<!-- CONTACT -->
-<section id="contact" class="section bg-light">
-    <div class="container center">
-        <h2>Kontak</h2>
-        <p>Email: emailkamu@gmail.com</p>
-        <p>Instagram: @usernamekamu</p>
-    </div>
-</section>
+    <section id="about" class="section">
+        <div class="container">
+            <div class="about-grid reveal">
+                <div class="about-text">
+                    <h2 class="section-title">Tentang Saya</h2>
+                    <p class="p-lead">
+                        Mahasiswa <strong>Teknik Informatika Universitas Siliwangi</strong> yang terobsesi pada titik temu antara fungsionalitas dan desain.
+                    </p>
+                    <p>
+                        Saya menghabiskan waktu dengan membangun sistem berbasis web yang tidak hanya bekerja, tapi juga memiliki struktur kode yang bersih dan aman. Bagi saya, setiap baris kode adalah solusi untuk tantangan digital.
+                    </p>
+                    <p>
+                        Fokus saat ini: <strong>Web Development & Information Security.</strong>
+                    </p>
+                    
+                    <div class="about-meta">
+                        <div class="meta-item"><span>Lokasi</span> Tasikmalaya, Indonesia</div>
+                        <div class="meta-item"><span>Pendidikan</span> S1 Informatika - UNSIL</div>
+                        <div class="meta-item"><span>Status</span> Open for Collaboration</div>
+                    </div>
+                </div>
+                <div class="about-visual">
+                    <div class="profile-frame">
+                        <img src="assets/farrel.jpeg" alt="Farrel Fernaldy" class="profile-img">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
-<footer>
-    <p>© 2026 Nama Kamu. All Rights Reserved.</p>
-</footer>
+    <section id="skills" class="section">
+        <div class="container">
+            <h2 class="section-title center reveal">Tech Stack & Tools</h2>
+            <div class="skills-wrapper reveal">
+                
+                <div class="skills-group">
+                    <div class="group-header">
+                        <h3>Development</h3>
+                        <p>Fokus pada performa kode dan struktur data yang efisien.</p>
+                    </div>
+                    <div class="skills-grid">
+                        <div class="skill-pill"><i class="fa-brands fa-html5"></i> HTML5</div>
+                        <div class="skill-pill"><i class="fa-brands fa-css3-alt"></i> CSS3</div>
+                        <div class="skill-pill"><i class="fa-brands fa-js"></i> JavaScript</div>
+                        <div class="skill-pill"><i class="fa-brands fa-php"></i> PHP</div>
+                        <div class="skill-pill"><i class="fa-solid fa-database"></i> MySQL</div>
+                    </div>
+                </div>
 
-<script src="js/script.js"></script>
+                <div class="skills-group">
+                    <div class="group-header">
+                        <h3>Design & Security</h3>
+                        <p>Menjaga keseimbangan antara estetika visual dan keamanan sistem.</p>
+                    </div>
+                    <div class="skills-grid">
+                        <div class="skill-pill"><i class="fa-brands fa-figma"></i> Figma</div>
+                        <div class="skill-pill"><i class="fa-brands fa-git-alt"></i> Git</div>
+                        <div class="skill-pill"><i class="fa-brands fa-github"></i> GitHub</div>
+                        <div class="skill-pill"><i class="fa-solid fa-shield-halved"></i> Cryptography</div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <section id="projects" class="section reveal">
+        <div class="container">
+            <h2 class="section-title">Featured Work</h2>
+            
+            <div class="project-list">
+                <div class="project-item">
+                    <div class="p-info">
+                        <span class="p-cat">Educational Platform</span>
+                        <h3>Scholaria</h3>
+                        <p class="hero-desc" style="margin-bottom: 0; font-size: 0.95rem;">
+                            Platform pembelajaran interaktif untuk membantu siswa mengelola materi dan tugas dengan lebih efisien.
+                        </p>
+                    </div>
+                    <a href="https://scholaria-app-mu.vercel.app" target="_blank" class="btn-primary">
+                        View Project <i class="fas fa-external-link-alt" style="margin-left: 8px; font-size: 0.8rem;"></i>
+                    </a>
+                </div>
+    
+                <div class="project-item">
+                    <div class="p-info">
+                        <span class="p-cat">Health & Nutrition</span>
+                        <h3>GiziCare</h3>
+                        <p class="hero-desc" style="margin-bottom: 0; font-size: 0.95rem;">
+                            Web monitoring kesehatan dan gizi yang dirancang untuk membantu tracking nutrisi harian secara praktis.
+                        </p>
+                    </div>
+                    <a href="https://gizicare-web.vercel.app/" target="_blank" class="btn-primary">
+                        View Project <i class="fas fa-external-link-alt" style="margin-left: 8px; font-size: 0.8rem;"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="section">
+        <div class="container">
+            <div class="contact-wrapper reveal">
+                <h2 class="section-title center">Hubungi Saya</h2>
+                <p class="contact-subtitle">Mari berdiskusi tentang proyek atau sekadar menyapa.</p>
+                <div class="contact-grid">
+                    <a href="mailto:farrelfernaldypz@gmail.com" class="contact-item">
+                        <div class="icon-box"><i class="fa-solid fa-envelope"></i></div>
+                        <h3>Email</h3>
+                        <p>farrelfernaldypz@gmail.com</p>
+                    </a>
+                    <a href="https://wa.me/6282119375807" target="_blank" class="contact-item">
+                        <div class="icon-box"><i class="fa-brands fa-whatsapp"></i></div>
+                        <h3>WhatsApp</h3>
+                        <p>+62 821 1937 5807</p>
+                    </a>
+                    <a href="https://instagram.com/frnldy.f" target="_blank" class="contact-item">
+                        <div class="icon-box"><i class="fa-brands fa-instagram"></i></div>
+                        <h3>Instagram</h3>
+                        <p>@frnldy.f</p>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p>© 2026 Farrel Fernaldy. Built with Passion & Code.</p>
+        </div>
+    </footer>
+
+    <script src="js/script.js"></script>
 </body>
 </html>
