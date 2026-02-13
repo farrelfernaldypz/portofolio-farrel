@@ -41,7 +41,6 @@ body {
     margin: 0 auto; 
 }
 
-/* Custom Scrollbar */
 ::-webkit-scrollbar { width: 8px; }
 ::-webkit-scrollbar-track { background: var(--primary); }
 ::-webkit-scrollbar-thumb { background: var(--quaternary); border-radius: 10px; }
@@ -147,8 +146,9 @@ nav {
     display: flex; 
     align-items: center; 
     position: relative; 
-    overflow: hidden;
+    overflow: visible;
     padding-top: 100px; 
+    z-index: 2;
 }
 
 .bg-glow { 
@@ -170,10 +170,10 @@ nav {
     border-radius: 30px; 
     backdrop-filter: blur(10px); 
     border: 1px solid var(--glass-border); 
-    box-shadow: 0 40px 100px rgba(0, 0, 0, 0.4); 
+    box-shadow: 0 40px 100px rgba(0, 0, 0, 0.6);
     max-width: 850px; 
     position: relative; 
-    z-index: 2; 
+    z-index: 10; 
     animation: float 6s ease-in-out infinite; 
 }
 
@@ -272,6 +272,12 @@ nav {
 /* ==========================================================================
    ABOUT SECTION
    ========================================================================== */
+
+#about {
+    position: relative;
+    z-index: 1;
+    background-color: var(--primary);
+}
 
 .about-grid { 
     display: grid; 
