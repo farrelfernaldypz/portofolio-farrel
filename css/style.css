@@ -539,3 +539,82 @@ footer {
     .hero-card { padding: 40px 20px; } 
     .project-item { flex-direction: column; align-items: flex-start; gap: 20px; } 
 }
+
+/* ==========================================================================
+   RESPONSIVE & MOBILE NAV OPTIMIZATION
+   ========================================================================== */
+
+/* Hamburger Icon */
+.menu-toggle {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+    z-index: 1001;
+}
+
+.menu-toggle .bar {
+    width: 25px;
+    height: 3px;
+    background-color: var(--white);
+    margin: 4px 0;
+    transition: 0.4s;
+    border-radius: 2px;
+}
+
+@media (max-width: 992px) { 
+    .about-grid { grid-template-columns: 1fr; gap: 50px; } 
+}
+
+@media (max-width: 768px) {
+    .container { width: 90%; }
+
+    /* Show Hamburger */
+    .menu-toggle { display: flex; }
+
+    /* Transform to X */
+    .menu-toggle.is-active .bar:nth-child(2) { opacity: 0; }
+    .menu-toggle.is-active .bar:nth-child(1) { transform: translateY(11px) rotate(45deg); background-color: var(--secondary); }
+    .menu-toggle.is-active .bar:nth-child(3) { transform: translateY(-11px) rotate(-45deg); background-color: var(--secondary); }
+
+    /* Mobile Menu Overlay */
+    .nav-links {
+        position: fixed;
+        right: -100%;
+        top: 0;
+        width: 100%;
+        height: 100vh;
+        background: var(--primary);
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        transition: 0.5s cubic-bezier(0.77, 0.2, 0.05, 1.0);
+        z-index: 1000;
+        border-left: 1px solid var(--tertiary);
+    }
+
+    .nav-links.active { right: 0; }
+    .nav-links li { margin: 15px 0; }
+    .nav-links a { font-size: 1.5rem; }
+
+    /* Hero Responsive */
+    .hero { height: auto; padding: 150px 0 100px; }
+    .hero-card { padding: 40px 25px; text-align: center; }
+    .hero-btns { flex-direction: column; gap: 15px; }
+    .hero h1 { font-size: 2.8rem; }
+    .hero-desc { margin: 0 auto 30px; }
+
+    /* Skills Responsive */
+    .skills-group { padding: 30px 20px; }
+    .skill-pill { padding: 12px 20px; font-size: 0.9rem; }
+
+    /* Project Responsive */
+    .project-item { 
+        flex-direction: column; 
+        text-align: center; 
+        gap: 25px; 
+    }
+    .project-item .btn-primary { width: 100%; }
+
+    /* About Responsive */
+    .profile-frame { max-width: 280px; margin: 0 auto; }
+}
