@@ -146,8 +146,8 @@ nav {
     display: flex; 
     align-items: center; 
     position: relative; 
-    overflow: visible;
-    padding-top: 100px; 
+    overflow: hidden; 
+    padding: 80px 0; 
     z-index: 2;
 }
 
@@ -166,12 +166,14 @@ nav {
 
 .hero-card { 
     background: var(--glass); 
-    padding: 60px; 
+    padding: clamp(30px, 5vw, 60px); 
     border-radius: 30px; 
     backdrop-filter: blur(10px); 
     border: 1px solid var(--glass-border); 
     box-shadow: 0 40px 100px rgba(0, 0, 0, 0.6);
+    width: 100%; 
     max-width: 850px; 
+    margin: 0 auto;
     position: relative; 
     z-index: 10; 
     animation: float 6s ease-in-out infinite; 
@@ -208,6 +210,7 @@ nav {
 .hero-btns { 
     display: flex; 
     gap: 20px; 
+    flex-wrap: wrap; 
 }
 
 .btn-primary { 
@@ -562,7 +565,15 @@ footer {
    RESPONSIVE & MOBILE NAV
    ========================================================================== */
 
-   @media (max-width: 768px) {
+@media (max-width: 768px) {
+    body {
+        overflow-x: hidden;
+    }
+
+    .container {
+        width: 92%; 
+    }
+
     .nav-links {
         display: none; 
         position: fixed;
@@ -571,8 +582,6 @@ footer {
         width: 230px;
         flex-direction: column;
         padding: 20px 10px;
-        backdrop-filter: blur(20px) saturate(180%);
-        -webkit-backdrop-filter: blur(20px) saturate(180%);
         border-radius: 24px;
         background: transparent !important; 
         z-index: 1000;
@@ -589,8 +598,6 @@ footer {
         inset: 0;
         z-index: -1;
         background: rgba(30, 32, 45, 0.88);
-        backdrop-filter: blur(20px) saturate(180%);
-        -webkit-backdrop-filter: blur(20px) saturate(180%);
         border-radius: 24px;
         border: 1px solid rgba(255, 255, 255, 0.15);
         box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5);
@@ -602,10 +609,61 @@ footer {
         pointer-events: auto;
     }
 
-    .nav-scrolled {
-        backdrop-filter: none !important;
-        -webkit-backdrop-filter: none !important;
-        background: var(--primary) !important;
+    .nav-links a {
+        color: white !important;
+        font-size: 13px;
+        font-weight: 500;
+        padding: 15px;
+        display: block;
+        text-align: center;
+        text-decoration: none;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+    }
+
+    .hero {
+        text-align: center;
+        padding-top: 60px;
+    }
+
+    .hero-card { 
+        padding: 35px 20px; 
+        width: 100%;
+        margin: 0 auto;
+    }
+
+    .hero h1 {
+        font-size: clamp(2rem, 10vw, 2.8rem);
+        margin-bottom: 20px;
+    }
+
+    .hero-desc {
+        font-size: 1rem;
+        margin: 0 auto 30px;
+    }
+
+    .hero-btns {
+        flex-direction: column;
+        width: 100%;
+        gap: 12px;
+    }
+
+    .btn-primary, .btn-outline {
+        width: 100%;
+        text-align: center;
+        padding: 16px;
+    }
+
+    .about-grid { 
+        grid-template-columns: 1fr; 
+        gap: 40px; 
+    }
+
+    .project-item { 
+        flex-direction: column; 
+        align-items: center; 
+        text-align: center;
+        gap: 20px; 
     }
 
     .menu-toggle {
@@ -624,30 +682,15 @@ footer {
         transition: 0.4s;
     }
 
-    .menu-toggle.is-active .bar:nth-child(2) { opacity: 0; }
-    .menu-toggle.is-active .bar:nth-child(1) { transform: translateY(8px) rotate(45deg); }
-    .menu-toggle.is-active .bar:nth-child(3) { transform: translateY(-8px) rotate(-45deg); }
-
-    .nav-links li {
-        list-style: none;
-        width: 100%;
-        margin: 5px 0;
+    .menu-toggle.is-active .bar:nth-child(2) { 
+        opacity: 0; 
     }
 
-    .nav-links a {
-        color: white !important;
-        font-size: 13px;
-        font-weight: 500;
-        padding: 15px;
-        display: block;
-        text-align: center;
-        text-decoration: none;
-        text-transform: uppercase;
-        letter-spacing: 1px;
-        transition: 0.3s;
+    .menu-toggle.is-active .bar:nth-child(1) { 
+        transform: translateY(8px) rotate(45deg); 
     }
 
-    .hero-card { padding: 40px 20px; }
-    .project-item { flex-direction: column; align-items: flex-start; gap: 20px; }
-    .about-grid { grid-template-columns: 1fr; gap: 40px; }
+    .menu-toggle.is-active .bar:nth-child(3) { 
+        transform: translateY(-8px) rotate(-45deg); 
+    }
 }
